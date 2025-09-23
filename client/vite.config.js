@@ -6,7 +6,7 @@ export default defineConfig({
   plugins: [react(), tailwindcss()],
   base: '/portfolio-mern/',
   preview: {
-    allowedHosts: ['myportfoliopro-18.onrender.com'],
+    allowedHosts: ['myportfoliopro-14.onrender.com'],
     port: 4173, // optional, can be changed if you want
   },
 })
