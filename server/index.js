@@ -1,27 +1,3 @@
-import express from "express";
-import cors from "cors";
-import dotenv from "dotenv";
-import connectDB from "./db.js";
-import path from "path";
-import { fileURLToPath } from "url";
-
-// Load environment variables
-dotenv.config();
-
-// Connect to MongoDB
-connectDB();
-
-const app = express();
-
-// Middleware
-app.use(cors());
-app.use(express.json());
-app.use("/uploads", express.static("uploads"));
-
-// ✅ API Route for testimonials
-import testimonialRoutes from "./routes/testimonial.routes.js";
-app.use("/api/testimonials", testimonialRoutes);
-
 // ----------------------
 // React frontend serving
 // ----------------------
@@ -30,14 +6,17 @@ const __dirname = path.dirname(__filename);
 
 const clientBuildPath = path.join(__dirname, "../client/dist");
 
-// Serve static files from React
+// Serve static files from React build
 app.use(express.static(clientBuildPath));
 
-// All other routes → React index.html
-app.get(/.*/, (req, res) => {
+// All other routes -> index.html
+app.get("*", (req, res) => {
   res.sendFile(path.join(clientBuildPath, "index.html"));
 });
-const PORT = process.env.PORT || 5173;
+
+// ✅ Use Render's port or fallback to 10000 locally (avoid 5173 conflict)
+const PORT = process.env.PORT || 10000;
+
 app.listen(PORT, () => {
-  console.log(`✅ Server is running on port ${PORT}`);
+  console.log(`✅ Server running on port ${PORT}`);
 });
