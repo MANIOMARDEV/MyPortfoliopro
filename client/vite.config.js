@@ -4,10 +4,9 @@ import tailwindcss from "@tailwindcss/vite";
 
 export default defineConfig({
   plugins: [react(), tailwindcss()],
-  server: {
-    port: 5173,
-  },
   build: {
     outDir: "dist",
   },
+  // Only needed if your app is served from a subpath
+  // base: '/portfolio-mern/',
 });
