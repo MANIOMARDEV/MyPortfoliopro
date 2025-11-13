@@ -15,7 +15,7 @@ const Footer = () => {
           <a href="https://www.linkedin.com/in/omarmani/" target="_blank" rel="noopener noreferrer" className="hover:text-teal-400">
             <FaLinkedin size={20} />
           </a>
-          <a href="mailto:admin@manideals.store" className="hover:text-teal-400">
+          <a href="mailto:mani@omarmani.com" className="hover:text-teal-400">
             <FaEnvelope size={20} />
           </a>
         </div>
