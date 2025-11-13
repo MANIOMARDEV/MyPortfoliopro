@@ -110,7 +110,7 @@ const ContactSection = forwardRef((props, ref) => {
 
   <ul className="grid grid-cols-2 gap-6 justify-items-center">
     <li className="group flex flex-col items-center">
-      <a href="mailto:akankshajha397@email.com" className="hover:text-teal-400 text-center">
+      <a href="mailto:mani@omarmani.com" className="hover:text-teal-400 text-center">
         <FloatingIcon className="bg-gradient-to-br from-pink-500 to-yellow-400 text-2xl">
           <FaEnvelope size={24} />
         </FloatingIcon>
